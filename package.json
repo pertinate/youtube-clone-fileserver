@@ -1,0 +1,65 @@
+{
+  "name": "youtube-clone-fileserver",
+  "version": "1.0.0",
+  "description": "Template for a basic typescript project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --collectCoverage",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "dev:container": "docker run --rm -it --name node-docker -v $PWD:/home/node/app -w /home/node/app -v /home/pertinate/fileserver:/home/node/fileserver -e \"PORT=8082\" -p 8082:8082 --network=host -u node node:14.13.1-alpine3.12 /bin/ash"
+  },
+  "keywords": [],
+  "author": "Pertinate",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "@types/socket.io": "^2.1.11",
+    "@types/socket.io-client": "^1.4.34",
+    "directory-tree": "^2.2.5",
+    "download.js": "^1.0.0",
+    "express": "^4.17.1",
+    "ffmpeg": "0.0.4",
+    "ffprobe": "^1.1.2",
+    "ffprobe-static": "^3.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "kafka-node": "^5.0.0",
+    "kafka-proxy": "^1.0.0",
+    "node-fetch": "^2.6.1",
+    "range-stream": "^1.1.0",
+    "redis": "^3.0.2",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.1",
+    "socket.io-stream": "^0.9.1",
+    "stream-buffers": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/ffmpeg": "^1.0.1",
+    "@types/ffprobe": "^1.1.0",
+    "@types/ffprobe-static": "^2.0.0",
+    "@types/fluent-ffmpeg": "^2.1.16",
+    "@types/jest": "^26.0.14",
+    "@types/kafka-node": "^3.0.0",
+    "@types/node": "^14.11.10",
+    "@types/node-fetch": "^2.5.7",
+    "@types/redis": "^2.8.28",
+    "@types/stream-buffers": "^3.0.3",
+    "@types/supertest": "^2.0.10",
+    "jest": "^26.5.3",
+    "supertest": "^5.0.0",
+    "ts-jest": "^26.4.1",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pertinate/ts-express-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pertinate/ts-express-template/issues"
+  },
+  "homepage": "https://github.com/pertinate/ts-express-template#readme"
+}
